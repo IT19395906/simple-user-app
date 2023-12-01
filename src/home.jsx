@@ -6,12 +6,21 @@ export default function Home() {
 
     const [data, setData] = useState([]);
 
-
     useEffect(() => {
         axios.get('http://localhost:3000/users')
             .then(res => setData(res.data))
             .catch(err => console.log(err));
     }, [])
+
+    const handleDelete = (id) => {
+        const confirm = window.confirm("do you want to delete record?");
+        if (confirm) {
+            axios.delete('http://localhost:3000/users/' + id)
+                .then(res => {
+                    window.location.reload();
+                }).catch(err => console.log(err));
+        }
+    }
 
     return (
         <div className="d-flex flex-column justify-content-center align-items-center bg-light vh-100">
@@ -32,16 +41,16 @@ export default function Home() {
                     </thead>
                     <tbody>
                         {data.map((item, key) => {
-                            return(
+                            return (
                                 <tr key={key}>
                                     <td>{item.id}</td>
                                     <td>{item.name}</td>
                                     <td>{item.email}</td>
                                     <td>{item.phone}</td>
                                     <td>
-                                        <button className="btn btn-sm btn-info me-2">View</button>
-                                        <button className="btn btn-sm btn-primary me-2">Edit</button>
-                                        <button className="btn btn-sm btn-danger">Delete</button>
+                                        <Link to={`/get/${item.id}`} className="btn btn-sm btn-info me-2">View</Link>
+                                        <Link to={`/update/${item.id}`} className="btn btn-sm btn-primary me-2">Edit</Link>
+                                        <button onClick={(e) => handleDelete(item.id)} className="btn btn-sm btn-danger">Delete</button>
                                     </td>
                                 </tr>
                             );
