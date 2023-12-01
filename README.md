@@ -19,3 +19,6 @@ run json-server
 ```bash
 npx json-server --watch db.json
 ```
+just 
+``` json-server --watch db.json``` won't work you have to use npx or you can install globally typing ```npm install -g json-server``` 
+after that can run ```json-server --watch db.json```
