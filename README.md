@@ -12,6 +12,7 @@ npm install bootstrap
 npm install axios
 npm install json-server
 ```
+**import bootstrap/dist/css/bootstrap.min.css** in index.js
 - first create db.json file outside src folder  (this single file act as database)
 - add user data into json file
 - it is a lightweight and easy-to-use Node.js tool that simulates a RESTful API using a JSON file as the data source. With JSON Server, front-end developers can create mock APIs without the need to write complex server-side code
