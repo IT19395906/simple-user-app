@@ -13,6 +13,7 @@ npm install axios
 npm install json-server
 ```
 first create db.json file outside src folder
+this single file act as database
 
 run json-server
 ```bash
