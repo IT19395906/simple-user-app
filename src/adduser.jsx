@@ -28,20 +28,20 @@ export default function AddUser() {
                 <form onSubmit={handleSubmit}>
                     <div className="mb-2">
                         <label htmlFor="name">Name</label>
-                        <input type="text" className="form-control" name="name"
+                        <input type="text" className="form-control" id="name"
                             onChange={(e) => setValue({ ...value, name: e.target.value })} placeholder="Enter user name" />
                     </div>
                     <div className="mb-2">
                         <label htmlFor="email">Email</label>
-                        <input type="email" className="form-control" name="email"
+                        <input type="email" className="form-control" id="email"
                             onChange={(e) => setValue({ ...value, email: e.target.value })} placeholder="Enter user email" />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="phone">Phone</label>
-                        <input type="text" className="form-control" name="phone"
+                        <input type="tel" className="form-control" id="phone"
                             onChange={(e) => setValue({ ...value, phone: e.target.value })} placeholder="Enter user phone number" />
                     </div>
-                    <button className="btn btn-success">Submit</button>
+                    <button className="btn btn-success" type="submit">Submit</button>
                     <Link to="/" className="btn btn-primary ms-3">Back</Link>
                 </form>
             </div>

@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
 
+    // State variable to hold the fetched data
     const [data, setData] = useState([]);
 
+     // useEffect hook to fetch data when the component mounts
     useEffect(() => {
         axios.get('http://localhost:3000/users')
-            .then(res => setData(res.data))
+            .then(res => setData(res.data))  // Update the state with the fetched data
             .catch(err => console.log(err));
     }, [])
 
