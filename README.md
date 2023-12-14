@@ -27,3 +27,5 @@ npx json-server --watch db.json
 
 **or you can install globally typing ```npm install -g json-server```** 
 after that can run ```json-server --watch db.json```
+
+https://www.youtube.com/watch?v=SYv61aPSiOo&t=1501s
